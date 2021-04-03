@@ -4,6 +4,7 @@ class Fnm < Formula
   url "https://github.com/Schniz/fnm/archive/v1.24.0.tar.gz"
   sha256 "ba03a43748a39d9d96db77d21854e040320617221964e70b8588f63307c5fc8d"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/Schniz/fnm.git"
 
   livecheck do
@@ -12,9 +13,11 @@ class Fnm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "3e72c6b836f28fc9d58c2caf9ddbc7fa04aa363c7752cf9cf567d689729ca5e8"
-    sha256 cellar: :any_skip_relocation, catalina: "f3acabfa84fdbef92d68703fcb12a6120f334bfd69c684d576a8e0ac30f45d37"
-    sha256 cellar: :any_skip_relocation, mojave:   "d4567300fc34c94ff65e20449a0bcde63ee069aa6d234f1160ffa88bd896e2ad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4f28914964ce2e514375d31d09b4a262212c3b99810ef54c9903517bde9abc11"
+    sha256 cellar: :any_skip_relocation, big_sur:       "3e72c6b836f28fc9d58c2caf9ddbc7fa04aa363c7752cf9cf567d689729ca5e8"
+    sha256 cellar: :any_skip_relocation, catalina:      "f3acabfa84fdbef92d68703fcb12a6120f334bfd69c684d576a8e0ac30f45d37"
+    sha256 cellar: :any_skip_relocation, mojave:        "d4567300fc34c94ff65e20449a0bcde63ee069aa6d234f1160ffa88bd896e2ad"
   end
 
   depends_on "rust" => :build
